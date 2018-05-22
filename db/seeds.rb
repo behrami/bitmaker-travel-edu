@@ -25,3 +25,5 @@ countries = Country.create([{ name: 'Canada'}
 
 cities = City.create([      {name: 'Toronto', country_id: 1}
                             ])
+
+Month.find_by(name: 'June').countries << (Country.find_by(name: 'Canada'))

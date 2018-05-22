@@ -3,6 +3,6 @@
 
 <ul>
 <% @months.each do |month| %>
-  <li><%= link_to(month.name, countries_path) %></li>
+  <li><%= link_to(month.name, month_countries_path(month)) %></li>
 <% end %>
 </ul>
