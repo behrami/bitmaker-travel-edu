@@ -297,3 +297,10 @@ Processing by CountriesController#index as HTML
 Completed 200 OK in 39ms (Views: 37.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/countries" for 127.0.0.1 at 2018-05-22 12:26:22 -0400
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  Rendered countries/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 229ms (Views: 223.8ms | ActiveRecord: 0.0ms)
+
+
