@@ -20,7 +20,31 @@
                           {name: 'December'}
                           ])
 
-countries = Country.create([{ name: 'Canada'}
+countries = Country.create([{ name: 'Canada'},
+                            { name: 'Italy'},
+                            { name: 'England'},
+                            { name: 'Switzerland'},
+                            { name: 'Austria'},
+                            { name: 'Portugal'},
+                            { name: 'Thailand'},
+                            { name: 'Japan'},
+                            { name: 'Singapore'},
+                            { name: 'Australia'},
+                            { name: 'Vietnam'},
+                            { name: 'Greece'},
+                            { name: 'Spain'},
+                            { name: 'Ireland'},
+                            { name: 'Sweden'},
+                            { name: 'France'},
+                            { name: 'Colombia'},
+                            { name: 'USA'},
+                            { name: 'Brazil'},
+                            { name: 'South Africa'},
+                            { name: 'Mexico'},
+                            { name: 'Hungary'},
+                            { name: 'Malaysia'},
+                            { name: 'Israel'}
+
                             ])
 
 cities = City.create([      {name: 'Toronto', country_id: 1}
