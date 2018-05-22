@@ -1,2 +1,8 @@
 <h1>Months#index</h1>
 <p>Find me in app/views/months/index.html.erb</p>
+
+<ul>
+<% @months.each do |month| %>
+  <li><%= link_to(month.name, countries_path) %></li>
+<% end %>
+</ul>

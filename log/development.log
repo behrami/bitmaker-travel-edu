@@ -147,3 +147,153 @@ Processing by MonthsController#index as HTML
 Completed 200 OK in 1163ms (Views: 1156.2ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (5.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "cities" CASCADE[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "cities" ("id" bigserial primary key, "name" character varying, "country_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "countries" CASCADE[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "countries" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (4.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "countries_months" CASCADE[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "countries_months" ("country_id" bigint NOT NULL, "month_id" bigint NOT NULL)[0m
+  [1m[35m (3.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "hotels" CASCADE[0m
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE TABLE "hotels" ("id" bigserial primary key, "city_id" integer, "name" character varying, "formatted_address" text, "latitude" float, "longitude" float, "rating" float, "photo_reference" text, "place_id" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "months" CASCADE[0m
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE "months" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (3.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "cities" CASCADE[0m
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE "cities" ("id" bigserial primary key, "name" character varying, "country_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "countries" CASCADE[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "countries" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "countries_months" CASCADE[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "countries_months" ("country_id" bigint NOT NULL, "month_id" bigint NOT NULL)[0m
+  [1m[35m (4.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "hotels" CASCADE[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "hotels" ("id" bigserial primary key, "city_id" integer, "name" character varying, "formatted_address" text, "latitude" float, "longitude" float, "rating" float, "photo_reference" text, "place_id" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "months" CASCADE[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "months" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180522153808)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2018-05-22 16:17:16.283664"], ["key", "environment"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2018-05-22 16:17:16.288217"], ["key", "environment"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "months" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "January"], ["created_at", "2018-05-22 16:17:16.323636"], ["updated_at", "2018-05-22 16:17:16.323636"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "months" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "February"], ["created_at", "2018-05-22 16:17:16.326671"], ["updated_at", "2018-05-22 16:17:16.326671"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "months" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "March"], ["created_at", "2018-05-22 16:17:16.328985"], ["updated_at", "2018-05-22 16:17:16.328985"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "months" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "April"], ["created_at", "2018-05-22 16:17:16.331284"], ["updated_at", "2018-05-22 16:17:16.331284"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "months" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "May"], ["created_at", "2018-05-22 16:17:16.333535"], ["updated_at", "2018-05-22 16:17:16.333535"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "months" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "June"], ["created_at", "2018-05-22 16:17:16.335767"], ["updated_at", "2018-05-22 16:17:16.335767"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "months" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "July"], ["created_at", "2018-05-22 16:17:16.338219"], ["updated_at", "2018-05-22 16:17:16.338219"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "months" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "August"], ["created_at", "2018-05-22 16:17:16.340446"], ["updated_at", "2018-05-22 16:17:16.340446"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "months" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "September"], ["created_at", "2018-05-22 16:17:16.342529"], ["updated_at", "2018-05-22 16:17:16.342529"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "months" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "October"], ["created_at", "2018-05-22 16:17:16.344460"], ["updated_at", "2018-05-22 16:17:16.344460"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "months" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "November"], ["created_at", "2018-05-22 16:17:16.346602"], ["updated_at", "2018-05-22 16:17:16.346602"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "months" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "December"], ["created_at", "2018-05-22 16:17:16.348763"], ["updated_at", "2018-05-22 16:17:16.348763"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Canada"], ["created_at", "2018-05-22 16:17:16.360871"], ["updated_at", "2018-05-22 16:17:16.360871"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "cities" ("name", "country_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Toronto"], ["country_id", 1], ["created_at", "2018-05-22 16:17:16.384397"], ["updated_at", "2018-05-22 16:17:16.384397"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2018-05-22 12:19:50 -0400
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MonthsController#index as HTML
+  Rendering months/index.html.erb within layouts/application
+  [1m[36mMonth Load (3.5ms)[0m  [1m[34mSELECT "months".* FROM "months"[0m
+  Rendered months/index.html.erb within layouts/application (43.6ms)
+Completed 200 OK in 676ms (Views: 603.7ms | ActiveRecord: 21.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-22 12:20:10 -0400
+Processing by MonthsController#index as HTML
+  Rendering months/index.html.erb within layouts/application
+  [1m[36mMonth Load (1.0ms)[0m  [1m[34mSELECT "months".* FROM "months"[0m
+  Rendered months/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 38ms (Views: 33.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-22 12:20:41 -0400
+Processing by MonthsController#index as HTML
+  Rendering months/index.html.erb within layouts/application
+  [1m[36mMonth Load (0.4ms)[0m  [1m[34mSELECT "months".* FROM "months"[0m
+  Rendered months/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 39ms (Views: 37.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-22 12:22:00 -0400
+Processing by MonthsController#index as HTML
+  Rendering months/index.html.erb within layouts/application
+  [1m[36mMonth Load (0.6ms)[0m  [1m[34mSELECT "months".* FROM "months"[0m
+  Rendered months/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 37ms (Views: 33.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2018-05-22 12:22:02 -0400
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  Rendered countries/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 28ms (Views: 26.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2018-05-22 12:22:06 -0400
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  Rendered countries/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 30ms (Views: 28.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2018-05-22 12:22:13 -0400
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  Rendered countries/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 54ms (Views: 51.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2018-05-22 12:22:17 -0400
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  Rendered countries/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 39ms (Views: 37.4ms | ActiveRecord: 0.0ms)
+
+
