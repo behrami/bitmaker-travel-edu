@@ -129,3 +129,21 @@ Migrating to CreateCountriesMonthsJoinTable (20180522153808)
   [1m[36mMonth Load (0.9ms)[0m  [1m[34mSELECT  "months".* FROM "months" INNER JOIN "countries_months" ON "months"."id" = "countries_months"."month_id" WHERE "countries_months"."country_id" = $1 LIMIT $2[0m  [["country_id", 1], ["LIMIT", 11]]
   [1m[36mCountry Load (0.9ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" ORDER BY "countries"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mMonth Load (1.0ms)[0m  [1m[34mSELECT  "months".* FROM "months" INNER JOIN "countries_months" ON "months"."id" = "countries_months"."month_id" WHERE "countries_months"."country_id" = $1 LIMIT $2[0m  [["country_id", 1], ["LIMIT", 11]]
+  [1m[36mHotel Load (0.3ms)[0m  [1m[34mSELECT  "hotels".* FROM "hotels" ORDER BY "hotels"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" ORDER BY "countries"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2018-05-22 11:51:46 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/behram/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/behram/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb (2.8ms)
+Completed 200 OK in 12ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-22 11:56:16 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MonthsController#index as HTML
+  Rendering months/index.html.erb within layouts/application
+  Rendered months/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 1163ms (Views: 1156.2ms | ActiveRecord: 0.0ms)
+
+
