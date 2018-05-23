@@ -49,7 +49,6 @@ class HotelsController < ApplicationController
     hotelList_body = JSON.parse(hotelList_response.body)
     @hotelListArray = hotelList_body['results']
 
-
     @foundHotelsArray= []
     @hotelListArray.each do |hotel|
       if hotel['place_id'] == @hotel_id
@@ -57,5 +56,8 @@ class HotelsController < ApplicationController
       end
     end
 
+    book_response = HTTParty.get("https://maps.googleapis.com/maps/api/place/details/json?placeid=#{@foundHotelsArray[0]['place_id']}&key=#{@key}")
+    book_body = JSON.parse(book_response.body)
+    @link = book_body['result']['url']
   end
 end
