@@ -1,2 +1,13 @@
 <h1>Hotels#index</h1>
 <p>Find me in app/views/hotels/index.html.erb</p>
+
+<ul>
+<% @hotelListArray.each do |hotel| %>
+  <p><li>
+    <%=image_tag("https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{hotel['photos'][0]['photo_reference']}&sensor=false&key=#{@key}") %><br>
+    Name: <%= hotel['name'] %><br>
+    Address: <%= hotel['formatted_address'] %><br>
+    Rating: <%= @rating = hotel['rating'] %>
+  </p></li>
+<% end %>
+</ul>
