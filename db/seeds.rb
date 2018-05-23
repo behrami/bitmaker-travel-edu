@@ -71,7 +71,7 @@ cities = City.create([      {name: 'Toronto', country_id: 1},
                             {name: 'Tokyo', country_id: 8},
                             {name: 'Kyoto', country_id: 8},
                             {name: 'Osaka', country_id: 8},
-                            # {name: 'Singapore', country_id: 9},
+                            {name: 'Singapore', country_id: 9},
                             {name: 'Sydney', country_id: 10},
                             {name: 'Melbourne', country_id: 10},
                             {name: 'Perth', country_id: 10},
@@ -106,7 +106,7 @@ cities = City.create([      {name: 'Toronto', country_id: 1},
                             {name: 'Johannesburg', country_id: 20},
                             {name: 'Durban', country_id: 20},
                             {name: 'Merida', country_id: 21},
-                            # {name: 'Mexico City', country_id: 21},
+                            {name: 'Mexico City', country_id: 21},
                             {name: 'Guadalajara', country_id: 21},
                             {name: 'Budapest', country_id: 22},
                             {name: 'Siófok', country_id: 22},
@@ -119,4 +119,38 @@ cities = City.create([      {name: 'Toronto', country_id: 1},
                             {name: 'Tiberias', country_id: 24}
                             ])
 
+Month.find_by(name: 'January').countries << (Country.find_by(name: 'Italy'))
+Month.find_by(name: 'January').countries << (Country.find_by(name: 'England'))
+Month.find_by(name: 'January').countries << (Country.find_by(name: 'Switzerland'))
+Month.find_by(name: 'January').countries << (Country.find_by(name: 'Austria'))
+Month.find_by(name: 'January').countries << (Country.find_by(name: 'Portugal'))
+
+Month.find_by(name: 'February').countries << (Country.find_by(name: 'Thailand'))
+Month.find_by(name: 'February').countries << (Country.find_by(name: 'Japan'))
+Month.find_by(name: 'February').countries << (Country.find_by(name: 'Singapore'))
+Month.find_by(name: 'February').countries << (Country.find_by(name: 'Australia'))
+Month.find_by(name: 'February').countries << (Country.find_by(name: 'Vietnam'))
+
+Month.find_by(name: 'March').countries << (Country.find_by(name: 'Greece'))
+Month.find_by(name: 'March').countries << (Country.find_by(name: 'Spain'))
+Month.find_by(name: 'March').countries << (Country.find_by(name: 'Ireland'))
+Month.find_by(name: 'March').countries << (Country.find_by(name: 'Sweden'))
+Month.find_by(name: 'March').countries << (Country.find_by(name: 'France'))
+
+Month.find_by(name: 'April').countries << (Country.find_by(name: 'Colombia'))
+Month.find_by(name: 'April').countries << (Country.find_by(name: 'USA'))
+Month.find_by(name: 'April').countries << (Country.find_by(name: 'Italy'))
+Month.find_by(name: 'April').countries << (Country.find_by(name: 'Thailand'))
+Month.find_by(name: 'April').countries << (Country.find_by(name: 'France'))
+
+Month.find_by(name: 'May').countries << (Country.find_by(name: 'Brazil'))
+Month.find_by(name: 'May').countries << (Country.find_by(name: 'USA'))
+Month.find_by(name: 'May').countries << (Country.find_by(name: 'Australia'))
+Month.find_by(name: 'May').countries << (Country.find_by(name: 'Switzerland'))
+Month.find_by(name: 'May').countries << (Country.find_by(name: 'South Africa'))
+
 Month.find_by(name: 'June').countries << (Country.find_by(name: 'Canada'))
+Month.find_by(name: 'June').countries << (Country.find_by(name: 'USA'))
+Month.find_by(name: 'June').countries << (Country.find_by(name: 'Mexico'))
+Month.find_by(name: 'June').countries << (Country.find_by(name: 'Brazil'))
+Month.find_by(name: 'June').countries << (Country.find_by(name: 'Portugal'))
