@@ -12,28 +12,22 @@ class HotelsController < ApplicationController
     hotelList_body = JSON.parse(hotelList_response.body)
 
     @hotelListArray = hotelList_body['results']
-
+    @results = []
     @hotelListArray.each do |hotel|
-      @place_id = hotel['place_id']
-      @name = hotel['name']
-      @address = hotel['formatted_address']
-      @rating = hotel['rating']
-      @photo_reference = hotel['photos'][0]['photo_reference']
-      @latitude = hotel['geometry']['location']['lat']
-      @longitude = hotel['geometry']['location']['lng']
+      @hash = {}
+      @hash[:place_id] = hotel['place_id']
+      @hash[:name] = hotel['name']
+      @hash[:address] = hotel['formatted_address']
+      @hash[:rating] = hotel['rating']
+      @hash[:photo_reference] = hotel['photos'][0]['photo_reference']
+      @hash[:latitude] = hotel['geometry']['location']['lat']
+      @hash[:longitude] = hotel['geometry']['location']['lng']
+      @results << @hash
     end
 
     respond_to do |format|
       format.html
-      format.json {  render json: {
-                                    "place_id": @place_id,
-                                    "name": @name,
-                                    "address": @address,
-                                    "longitude": @longitude,
-                                    "latitude": @latitude,
-                                    "rating": @rating,
-                                    "photo_reference": @photo_reference
-                                  }
+      format.json {  render json: @results
                   }
     end
 
