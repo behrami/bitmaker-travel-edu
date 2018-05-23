@@ -59,5 +59,6 @@ class HotelsController < ApplicationController
     book_response = HTTParty.get("https://maps.googleapis.com/maps/api/place/details/json?placeid=#{@foundHotelsArray[0]['place_id']}&key=#{@key}")
     book_body = JSON.parse(book_response.body)
     @link = book_body['result']['url']
+  
   end
 end
