@@ -1,2 +1,7 @@
 <h1>Hotels#show</h1>
 <p>Find me in app/views/hotels/show.html.erb</p>
+
+<%=image_tag("https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{@foundHotelsArray[0]['photo_reference']}&sensor=false&key=#{@key}") %><br>
+Name:<%= @foundHotelsArray[0]['name'] %><br>
+Address: <%= @foundHotelsArray[0]['formatted_address'] %><br>
+Rating: <%= @foundHotelsArray[0]['rating'] %>

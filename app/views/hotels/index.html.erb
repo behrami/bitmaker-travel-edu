@@ -4,10 +4,11 @@
 <ul>
 <% @hotelListArray.each do |hotel| %>
   <p><li>
-    <%=image_tag("https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{hotel['photos'][0]['photo_reference']}&sensor=false&key=#{@key}") %><br>
+
     Name: <%= hotel['name'] %><br>
     Address: <%= hotel['formatted_address'] %><br>
-    Rating: <%= @rating = hotel['rating'] %>
+    Rating: <%= hotel['rating'] %>
+    <%= link_to('Single Hotel', city_hotel_path(@city_id,hotel['place_id'])) %>
   </p></li>
 <% end %>
 </ul>
