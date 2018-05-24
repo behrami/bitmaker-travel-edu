@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'sessions/new'
-
-  get 'sessions/create'
-
-  get 'sessions/destroy'
+  # get 'sessions/new'
+  #
+  # get 'sessions/create'
+  #
+  # get 'sessions/destroy'
 
   get 'favourites/index'
 
@@ -14,11 +14,15 @@ Rails.application.routes.draw do
 
   get 'favourites/destroy'
 
-  get 'users/new'
+  # get 'users/new'
+  #
+  # get 'users/create'
 
-  get 'users/create'
+  # get 'users/show'
 
-  get 'users/show'
+  resource :user, only: [:new, :create]
+
+  resource :session, only: [:new, :create, :destroy]
 
   root 'months#index'
 
