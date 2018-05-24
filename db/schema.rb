@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180522153808) do
+ActiveRecord::Schema.define(version: 20180524145933) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,13 @@ ActiveRecord::Schema.define(version: 20180522153808) do
     t.bigint "month_id", null: false
   end
 
+  create_table "favourites", force: :cascade do |t|
+    t.integer "hotel_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "hotels", force: :cascade do |t|
     t.integer "city_id"
     t.string "name"
@@ -48,6 +55,16 @@ ActiveRecord::Schema.define(version: 20180522153808) do
 
   create_table "months", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "user_name"
+    t.string "email"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
