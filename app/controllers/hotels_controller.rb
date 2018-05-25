@@ -57,7 +57,7 @@ class HotelsController < ApplicationController
     end
 
 
-    @temp = Hotel.new(city_id: @city_id,
+    @new_hotel = Hotel.new(city_id: @city_id,
                         name: @foundHotelsArray[0]['name'],
                         formatted_address: @foundHotelsArray[0]['formatted_address'],
                         rating: @foundHotelsArray[0]['rating'],
@@ -66,8 +66,8 @@ class HotelsController < ApplicationController
                         photo_reference: @foundHotelsArray[0]['photos'][0]['photo_reference'],
                         place_id: @foundHotelsArray[0]['place_id'])
 
-    if !(Hotel.find_by(place_id: @temp.place_id))
-      @temp.save
+    if !(Hotel.find_by(place_id: @new_hotel.place_id))
+      @new_hotel.save
     end
 
     book_response = HTTParty.get("https://maps.googleapis.com/maps/api/place/details/json?placeid=#{@foundHotelsArray[0]['place_id']}&key=#{@key}")

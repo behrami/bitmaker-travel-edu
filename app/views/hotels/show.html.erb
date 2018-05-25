@@ -7,8 +7,9 @@ Add Picture code here<br>
 Address: <%= @foundHotelsArray[0]['formatted_address'] %><br>
 Rating: <%= @foundHotelsArray[0]['rating'] %><br>
 
-<%= link_to('Book Now', @link, class: 'btn btn-success btn-lg', role: 'button' ) %>
 
+<%= link_to('Book Now', @link, class: 'btn btn-success btn-lg', role: 'button' ) %>
+  <%= button_to "Add to favourites", hotel_favourites_path(@new_hotel.id), method: :post %>
 </div>
     <script>
       // This example requires the Places library. Include the libraries=places

@@ -1,25 +1,5 @@
 Rails.application.routes.draw do
 
-  # get 'sessions/new'
-  #
-  # get 'sessions/create'
-  #
-  # get 'sessions/destroy'
-
-  get 'favourites/index'
-
-  get 'favourites/new'
-
-  get 'favourites/create'
-
-  get 'favourites/destroy'
-
-  # get 'users/new'
-  #
-  # get 'users/create'
-
-  # get 'users/show'
-
   resource :user, only: [:new, :create]
 
   resource :session, only: [:new, :create, :destroy]
@@ -36,6 +16,10 @@ Rails.application.routes.draw do
 
   resources :cities, only: %i[index] do
     resources :hotels, only: %i[index show]
+  end
+
+  resources :hotels, only: %i[show] do
+    resources :favourites, only: %i[index new create destroy]
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
