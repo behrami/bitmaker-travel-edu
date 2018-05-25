@@ -9,13 +9,14 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_path
     else
+      flash.now[:alert] = 'Unsuccessful Sign In'
       render :new
     end
   end
 
   def destroy
     session[:user_id] = nil
-    flash[:notice] = 'Successfully signed out'
+    flash[:notice] = 'Successfully Signed Out'
     redirect_to root_path
   end
 end

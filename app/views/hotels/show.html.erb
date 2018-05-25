@@ -1,13 +1,15 @@
-<h1>Hotels#show</h1>
-<p>Find me in app/views/hotels/show.html.erb</p>
+<div class ='container'>
 
-Name:<%= @foundHotelsArray[0]['name'] %><br>
+<div class = 'page-header'>
+<h1><%= @foundHotelsArray[0]['name'] %></h1>
+</div>
+Add Picture code here<br>
 Address: <%= @foundHotelsArray[0]['formatted_address'] %><br>
 Rating: <%= @foundHotelsArray[0]['rating'] %><br>
 
-<%= link_to('Book Now', @link ) %>
+<%= link_to('Book Now', @link, class: 'btn btn-success btn-lg', role: 'button' ) %>
 
-
+</div>
     <script>
       // This example requires the Places library. Include the libraries=places
       // parameter when you first load the API. For example:
@@ -25,7 +27,6 @@ Rating: <%= @foundHotelsArray[0]['rating'] %><br>
         var infowindow = new google.maps.InfoWindow();
         var service = new google.maps.places.PlacesService(map);
         var hotelId = myMap.getAttribute('data-place-id');
-
 
         service.getDetails({
           placeId: hotelId
