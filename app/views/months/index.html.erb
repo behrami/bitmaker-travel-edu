@@ -1,8 +1,15 @@
-<h1>Months#index</h1>
-<p>Find me in app/views/months/index.html.erb</p>
+<div class ='container'>
+
+<div class = 'page-header'>
+<h1>Select a Month</h1>
+</div>
 
 <ul>
 <% @months.each do |month| %>
-  <li><%= link_to(month.name, month_countries_path(month)) %></li>
+  <p>
+    <li><%= link_to(month.name, month_countries_path(month), class: 'btn btn-info btn-lg', role: 'button') %></li>
+  </p>
 <% end %>
 </ul>
+
+</div>

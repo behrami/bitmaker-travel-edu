@@ -1,14 +1,20 @@
-<h1>Hotels#index</h1>
-<p>Find me in app/views/hotels/index.html.erb</p>
+<div class ='container'>
+
+<div class = 'page-header'>
+<h1>Hotels</h1>
+</div>
 
 <ul>
 <% @hotelListArray.each do |hotel| %>
   <p><li>
-    
+
+    Add Picture code here<br>
     Name: <%= hotel['name'] %><br>
     Address: <%= hotel['formatted_address'] %><br>
-    Rating: <%= hotel['rating'] %>
-    <%= link_to('Single Hotel', city_hotel_path(@city_id,hotel['place_id'])) %>
+    Rating: <%= hotel['rating'] %><br>
+    <%= link_to('View Hotel', city_hotel_path(@city_id,hotel['place_id']), class: 'btn btn-success btn-lg', role: 'button') %>
   </p></li>
 <% end %>
 </ul>
+
+</div>
