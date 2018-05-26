@@ -8,51 +8,12 @@ Add Picture code here<br>
 Address: <%= @hotel['formatted_address'] %><br>
 Rating: <%= @hotel['rating'] %><br>
 
-<%= link_to('Book Now', @link, class: 'btn btn-success btn-lg', role: 'button' ) %>
-
+<%= link_to('Book Now', @link, class: 'btn btn-success btn-lg', role: 'button' ) %><br>
 
 </div>
-    <script>
-      // This example requires the Places library. Include the libraries=places
-      // parameter when you first load the API. For example:
-      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-      function initMap() {
-        var myMap = document.getElementById('map');
-        var latitude = parseFloat(myMap.getAttribute('data-lat'));
-        var longitude = parseFloat(myMap.getAttribute('data-lng'));
-        var map = new google.maps.Map(myMap, {
-          center: {lat: latitude, lng: longitude},
-          zoom: 15
-        });
+<p>
+<div id="map" data-place-id='<%=@place_id%>' data-lat="<%= @latitude%>" data-lng="<%= @longitude%>"></div>
+</p>
 
-        var infowindow = new google.maps.InfoWindow();
-        var service = new google.maps.places.PlacesService(map);
-        var hotelId = myMap.getAttribute('data-place-id');
-
-        service.getDetails({
-          placeId: hotelId
-        }, function(place, status) {
-          if (status === google.maps.places.PlacesServiceStatus.OK) {
-            var marker = new google.maps.Marker({
-              map: map,
-              position: place.geometry.location
-            });
-            google.maps.event.addListener(marker, 'click', function() {
-              infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-                'Place ID: ' + place.place_id + '<br>' +
-                place.formatted_address + '</div>');
-              infowindow.open(map, this);
-            });
-          }
-        });
-      }
-    </script>
-
-
-    <div id="map" data-place-id='<%=@place_id%>'
-      data-lat="<%= @latitude%>"
-      data-lng="<%= @longitude%>"></div>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=<%=@key%>&libraries=places&callback=initMap">
-    </script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=@key%>&libraries=places&callback=initMap"></script>

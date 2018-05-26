@@ -23,6 +23,8 @@ class HotelsController < ApplicationController
       format.json {render json: @results}
     end
 
+    @key = ENV['GOOGLE_KEY']
+
   end
 
   def show
