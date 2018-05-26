@@ -1,5 +1,6 @@
 class FavouritesController < ApplicationController
   def index
+    @favourites= Favourite.all
   end
 
   def new
@@ -12,6 +13,9 @@ class FavouritesController < ApplicationController
     @current_user_id = current_user.id
     @temp_favourite = Favourite.create(hotel_id: @hotel_id_favourite, user_id: @current_user_id)
 
+    if @temp_favourite.save
+      redirect_to hotel_favourites_path
+    end
   end
 
   def destroy

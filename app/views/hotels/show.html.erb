@@ -8,7 +8,8 @@ Add Picture code here<br>
 Address: <%= @hotel['formatted_address'] %><br>
 Rating: <%= @hotel['rating'] %><br>
 
-<%= link_to('Book Now', @link, class: 'btn btn-success btn-lg', role: 'button' ) %><br>
+<%= link_to('Book Now', @link, class: 'btn btn-success btn-lg', role: 'button' ) %>
+<%= link_to("Add to favourites", hotel_favourites_path(@hotel_id), method: :post, class: 'btn btn-success btn-lg', role: 'button') %><br>
 
 </div>
 
