@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+users = User.create([
+                    {first_name: 'admin', last_name: 'admin', user_name:'admin', email: 'admin@admin.com', password: 'admin'}
+  ])
+
  months = Month.create([  {name: 'January'},
                           {name: 'February'},
                           {name: 'March'},
@@ -47,7 +51,7 @@ countries = Country.create([{ name: 'Canada'},
 
                             ])
 
-cities = City.create([      {name: 'Toronto', country_id: 1},
+cities = City.create([     {name: 'Toronto', country_id: 1},
                             {name: 'Montreal', country_id: 1},
                             {name: 'Vancouver', country_id: 1},
                             {name: 'Rome', country_id: 2},

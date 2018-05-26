@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
 
-  resource :user, only: [:new, :create]
-
-  resource :session, only: [:new, :create, :destroy]
-
   root 'months#index'
+  resource :user, only: [:new, :create]
+  resource :session, only: [:new, :create, :destroy]
 
   resources :months, only: %i[index] do
     resources :countries, only: %i[index]
