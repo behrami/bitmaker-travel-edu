@@ -11,7 +11,7 @@
     Name: <%= hotel['name'] %><br>
     Address: <%= hotel['formatted_address'] %><br>
     Rating: <%= hotel['rating'] %><br>
-    <%= link_to('View Hotel', city_hotel_path(@city_id,hotel['place_id']), class: 'btn btn-success btn-lg', role: 'button') %>
+    <%= link_to('View Hotel', city_hotel_path(@city_id,hotel), class: 'btn btn-success btn-lg', role: 'button') %>
   </p></li>
 <% end %>
 </ul>

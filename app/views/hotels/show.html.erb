@@ -1,15 +1,16 @@
 <div class ='container'>
 
 <div class = 'page-header'>
-<h1><%= @foundHotelsArray[0]['name'] %></h1>
+<h1><%= @hotel['name'] %></h1>
 </div>
-Add Picture code here<br>
-Address: <%= @foundHotelsArray[0]['formatted_address'] %><br>
-Rating: <%= @foundHotelsArray[0]['rating'] %><br>
 
+Add Picture code here<br>
+Address: <%= @hotel['formatted_address'] %><br>
+Rating: <%= @hotel['rating'] %><br>
 
 <%= link_to('Book Now', @link, class: 'btn btn-success btn-lg', role: 'button' ) %>
-  <%= button_to "Add to favourites", hotel_favourites_path(@new_hotel.id), method: :post %>
+
+
 </div>
     <script>
       // This example requires the Places library. Include the libraries=places
@@ -49,9 +50,9 @@ Rating: <%= @foundHotelsArray[0]['rating'] %><br>
     </script>
 
 
-    <div id="map" data-place-id='<%=@hotel_id%>'
-      data-lat="<%= @foundHotelsArray[0]['geometry']['location']['lat']%>"
-      data-lng="<%= @foundHotelsArray[0]['geometry']['location']['lng']%>"></div>
+    <div id="map" data-place-id='<%=@place_id%>'
+      data-lat="<%= @latitude%>"
+      data-lng="<%= @longitude%>"></div>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=<%=@key%>&libraries=places&callback=initMap">
     </script>
