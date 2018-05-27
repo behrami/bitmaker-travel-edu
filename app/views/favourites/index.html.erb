@@ -2,6 +2,11 @@
 
 <ul>
 <% @favourites.each do |favourite|%>
-  <li><%= favourite.hotel.name %></li>
+  <% if current_user.id == favourite.user_id %>
+
+    <li><%= favourite.hotel.name %></li>
+    <%= link_to('Delete', favourite_path(favourite), method: :delete, data: {confirm: "Are you sure you want to delete this hotel?"}, class: 'btn btn-success btn-lg', role: 'button' ) %>
+    
+  <% end %>
 <% end %>
 </ul>

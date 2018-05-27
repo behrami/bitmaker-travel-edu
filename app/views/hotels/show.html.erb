@@ -9,7 +9,10 @@ Address: <%= @hotel['formatted_address'] %><br>
 Rating: <%= @hotel['rating'] %><br>
 
 <%= link_to('Book Now', @link, class: 'btn btn-success btn-lg', role: 'button' ) %>
+
+<% if current_user %>
 <%= link_to("Add to favourites", hotel_favourites_path(@hotel_id), method: :post, class: 'btn btn-success btn-lg', role: 'button') %><br>
+<% end %>
 
 </div>
 
