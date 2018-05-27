@@ -7,12 +7,12 @@
 <ul>
 <% @hotels.each do |hotel| %>
   <p><li>
-    Add Picture code here<br>
+    <%=image_tag("https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{hotel['photo_reference']}&sensor=false&key=#{@key}") %><br>
     Name: <%= hotel['name'] %><br>
     Address: <%= hotel['formatted_address'] %><br>
     Rating: <%= hotel['rating'] %><br>
     <%= link_to('View Hotel', city_hotel_path(@city_id,hotel), class: 'btn btn-success btn-lg', role: 'button') %>
-  </p></li>
+  </li></p>
 <% end %>
 </ul>
 
