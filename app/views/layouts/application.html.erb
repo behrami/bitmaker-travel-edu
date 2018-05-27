@@ -11,6 +11,7 @@
   </head>
 
   <body>
+    <h1>Where_to? WhereTo?</h1>
     <% if current_user %>
       Welcome <%= current_user.user_name %><br>
       <%= link_to( 'Sign out', session_path, method: :delete, class: 'btn btn-warning btn-lg', role: 'button') %>
