@@ -1,39 +1,39 @@
 <div class ='container'>
 
-<div class = 'page-header'>
-<h1>Sign up</h1>
+  <div class = 'page-header'>
+    <h1>Sign up</h1>
+  </div>
+
+  <%= form_for @user, url: user_path do |f| %>
+    <p>
+    <%= f.text_field :user_name, placeholder: 'User Name' %>
+    </p>
+
+    <p>
+    <%= f.text_field :first_name, placeholder: 'First Name'%>
+    </p>
+
+    <p>
+    <%= f.text_field :last_name, placeholder: 'Last Name' %>
+    </p>
+
+    <p>
+    <%= f.email_field :email, placeholder: 'Email' %>
+    </p>
+
+    <p>
+    <%= f.password_field :password, placeholder: 'Password' %>
+    </p>
+
+    <p>
+    <%= f.password_field :password_confirmation, placeholder: 'Confirm Password' %>
+    </p>
+
+    <p>
+    <%= f.submit 'Sign up' %>
+    </p>
+  <% end %>
+
+  <%=flash.now[:alert]%>
+
 </div>
-
-<%= form_for @user, url: user_path do |f| %>
-  <p>
-  <%= f.label :user_name %><br>
-  <%= f.text_field :user_name %><br>
-  </p>
-
-  <p>
-  <%= f.label :first_name %><br>
-  <%= f.text_field :first_name %></br>
-  </p>
-
-  <p>
-  <%= f.label :last_name %><br>
-  <%= f.text_field :last_name %></br>
-  </p>
-
-  <p>
-  <%= f.label :email %><br>
-  <%= f.email_field :email %></br>
-  </p>
-
-  <p>
-  <%= f.label :password %><br>
-  <%= f.password_field :password%></br>
-  </p>
-
-  <p>
-  <%= f.label :password_confirmation %><br>
-  <%= f.password_field :password_confirmation %></br>
-  </p>
-
-  <%= f.submit 'Sign up' %>
-<% end %>

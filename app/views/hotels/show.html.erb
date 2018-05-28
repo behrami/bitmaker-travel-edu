@@ -1,57 +1,42 @@
 <div class ='container'>
 
 <div class = 'page-header'>
-<h1><%= @foundHotelsArray[0]['name'] %></h1>
+<h1><%= @hotel['name'] %></h1>
 </div>
-Add Picture code here<br>
-Address: <%= @foundHotelsArray[0]['formatted_address'] %><br>
-Rating: <%= @foundHotelsArray[0]['rating'] %><br>
 
+Address: <%= @hotel['formatted_address'] %><br>
+Rating: <%= @hotel['rating'] %><br>
+Phone Number: <%= @phone_number %><br>
+Website: <%= link_to(@website, @website)%><br>
+Photos:<br>
 
-<%= link_to('Book Now', @link, class: 'btn btn-success btn-lg', role: 'button' ) %>
-  <%= button_to "Add to favourites", hotel_favourites_path(@new_hotel.id), method: :post %>
+<% @photosArray.each do |photo| %>
+  <p><%= image_tag("https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{photo['photo_reference']}&sensor=false&key=#{@key}") %></p>
+<% end %>
+
+Reviews: <br>
+
+<ul>
+<% @reviewsArray.each do |review| %>
+  <p><li>
+    <%= image_tag(review['profile_photo_url']) %>
+    <%= review['author_name']%><br>
+    <%= review['rating']%><br>
+    <%= review['text'] %>
+  </li></p>
+<% end %>
+</ul>
+
+<%= link_to('Book Now', @book_link, class: 'btn btn-success btn-lg', role: 'button' ) %>
+
+<% if current_user %>
+<%= link_to("Add to favourites", hotel_favourites_path(@hotel_id), method: :post, class: 'btn btn-success btn-lg', role: 'button') %><br>
+<% end %>
+
 </div>
-    <script>
-      // This example requires the Places library. Include the libraries=places
-      // parameter when you first load the API. For example:
-      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-      function initMap() {
-        var myMap = document.getElementById('map');
-        var latitude = parseFloat(myMap.getAttribute('data-lat'));
-        var longitude = parseFloat(myMap.getAttribute('data-lng'));
-        var map = new google.maps.Map(myMap, {
-          center: {lat: latitude, lng: longitude},
-          zoom: 15
-        });
+<p>
+<div id="map" data-place-id='<%=@place_id%>' data-lat="<%= @latitude%>" data-lng="<%= @longitude%>"></div>
+</p>
 
-        var infowindow = new google.maps.InfoWindow();
-        var service = new google.maps.places.PlacesService(map);
-        var hotelId = myMap.getAttribute('data-place-id');
-
-        service.getDetails({
-          placeId: hotelId
-        }, function(place, status) {
-          if (status === google.maps.places.PlacesServiceStatus.OK) {
-            var marker = new google.maps.Marker({
-              map: map,
-              position: place.geometry.location
-            });
-            google.maps.event.addListener(marker, 'click', function() {
-              infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-                'Place ID: ' + place.place_id + '<br>' +
-                place.formatted_address + '</div>');
-              infowindow.open(map, this);
-            });
-          }
-        });
-      }
-    </script>
-
-
-    <div id="map" data-place-id='<%=@hotel_id%>'
-      data-lat="<%= @foundHotelsArray[0]['geometry']['location']['lat']%>"
-      data-lng="<%= @foundHotelsArray[0]['geometry']['location']['lng']%>"></div>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=<%=@key%>&libraries=places&callback=initMap">
-    </script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=@key%>&libraries=places&callback=initMap"></script>

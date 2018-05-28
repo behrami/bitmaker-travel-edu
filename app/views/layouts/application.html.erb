@@ -11,14 +11,16 @@
   </head>
 
   <body>
+    <h1>Where_to? WhereTo?</h1>
     <% if current_user %>
       Welcome <%= current_user.user_name %><br>
       <%= link_to( 'Sign out', session_path, method: :delete, class: 'btn btn-warning btn-lg', role: 'button') %>
+      <%= link_to( 'Favourites', favourites_path, class: 'btn btn-warning btn-lg', role: 'button') %>
     <% else %>
       <%= link_to( 'Sign in', new_session_path, class: 'btn btn-warning btn-lg', role: 'button') %>
       <%= link_to( 'Sign up', new_user_path, class: 'btn btn-warning btn-lg', role: 'button') %><br>
     <% end %>
-    
+
     <%= flash[:notice] %>
 
     <%= yield %>
