@@ -9,11 +9,11 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get create" do
-skip
+
     user = create(:user)
 
-    post session_url
-    assert_response :success
+    post session_url, {params:{session:{user_name:'behram', password:'password'}}}
+    assert_response :found
 
   end
 
