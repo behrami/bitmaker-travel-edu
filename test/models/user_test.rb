@@ -8,7 +8,7 @@ class UserTest < ActiveSupport::TestCase
 
     # john = nil
     # john = create(:user, first_name: 'John', last_name:'Bertlik')
-
+  
     behram=build(:user)
     assert_equal(behram.first_name, 'Behram')
   end
