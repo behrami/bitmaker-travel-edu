@@ -8,6 +8,11 @@ Address: <%= @hotel['formatted_address'] %><br>
 Rating: <%= @hotel['rating'] %><br>
 Phone Number: <%= @phone_number %><br>
 Website: <%= link_to(@website, @website)%><br>
+
+<p>
+<div id="map" data-place-id='<%=@place_id%>' data-lat="<%= @latitude%>" data-lng="<%= @longitude%>"></div>
+</p>
+
 Photos: Code<br>
 
 Reviews: <br>
@@ -31,8 +36,6 @@ Reviews: <br>
 
 </div>
 
-<p>
-<div id="map" data-place-id='<%=@place_id%>' data-lat="<%= @latitude%>" data-lng="<%= @longitude%>"></div>
-</p>
+
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=@key%>&libraries=places&callback=initMap"></script>
