@@ -8,11 +8,7 @@ Address: <%= @hotel['formatted_address'] %><br>
 Rating: <%= @hotel['rating'] %><br>
 Phone Number: <%= @phone_number %><br>
 Website: <%= link_to(@website, @website)%><br>
-Photos:<br>
-
-<% @photosArray.each do |photo| %>
-  <p><%= image_tag("https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{photo['photo_reference']}&sensor=false&key=#{@key}") %></p>
-<% end %>
+Photos: Code<br>
 
 Reviews: <br>
 
