@@ -2,23 +2,37 @@ require 'test_helper'
 
 class FavouritesControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get favourites_index_url
+skip
+    current_user = create(:user)
+    get favourites_url
     assert_response :success
   end
 
   test "should get new" do
-    get favourites_new_url
+skip
+    country = create(:country)
+    city = create(:city)
+    hotel = create(:hotel)
+
+    get new_hotel_favourite_url
     assert_response :success
   end
 
   test "should get create" do
-    get favourites_create_url
-    assert_response :success
+skip
+    country = create(:country)
+    city = create(:city)
+    hotel = create(:hotel)
+
+    post hotel_favourites_url, {params:{hotel_id:1}}
+    assert_response :found
   end
 
   test "should get destroy" do
-    get favourites_destroy_url
+    skip
+    get favourite_url
     assert_response :success
+
   end
 
 end

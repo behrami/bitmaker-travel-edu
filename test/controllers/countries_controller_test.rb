@@ -2,7 +2,10 @@ require 'test_helper'
 
 class CountriesControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get countries_index_url
+
+    month = create(:month)
+
+    get month_countries_url(month.id)
     assert_response :success
   end
 

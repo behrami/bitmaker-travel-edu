@@ -29,7 +29,18 @@ task get_google_data: :environment do
                                   photo_reference: hotel['photos'][0]['photo_reference'],
                                   place_id: hotel['place_id'])
 
-          if !(Hotel.find_by(place_id: @new_hotel.place_id))
+          @update_hotel = Hotel.find_by(place_id: @new_hotel.place_id)
+
+          if @update_hotel
+            @update_hotel.name = @new_hotel.name
+            @update_hotel.formatted_address = @new_hotel.formatted_address
+            @update_hotel.rating = @new_hotel.rating
+            @update_hotel.latitude = @new_hotel.latitude
+            @update_hotel.longitude = @new_hotel.longitude
+            @update_hotel.photo_reference = @new_hotel.photo_reference
+
+            @update_hotel.save
+          else
             @new_hotel.save
           end
 
