@@ -21,6 +21,8 @@
       <%= link_to( 'Sign up', new_user_path, class: 'btn btn-warning btn-lg', role: 'button') %><br>
     <% end %>
 
+    <%= link_to('Home', months_path, class: 'btn btn-warning btn-lg', role: 'button') %>
+
     <%= flash[:notice] %>
 
     <%= yield %>
