@@ -29,8 +29,6 @@ Reviews: <br>
 <%= link_to("Add to favourites", hotel_favourites_path(@hotel_id), method: :post, class: 'btn btn-success btn-lg', role: 'button') %><br>
 <% end %>
 
-<% @saved_favourite = Hotel.find(params[:id]) %>
-
 </div>
 
 <p>
