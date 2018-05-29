@@ -4,12 +4,14 @@
 <h1>Select a Month</h1>
 </div>
 
-<ul>
+<div class ='month-index'>
+
 <% @months.each do |month| %>
-  <p>
-    <li><%= link_to(month.name, month_countries_path(month), class: 'btn btn-info btn-lg', role: 'button') %></li>
-  </p>
+
+    <p class="button"><%= link_to(month.name, month_countries_path(month), class: 'btn btn-info btn-lg', role: 'button') %></li>
+
 <% end %>
-</ul>
+
+</div>
 
 </div>

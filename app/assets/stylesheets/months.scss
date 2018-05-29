@@ -1,3 +1,22 @@
 // Place all the styles related to the Months controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.month-index{
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: auto;
+  grid-gap: 1em;
+
+
+  .button{
+    width: 100%;
+    display: grid;
+    padding: 40px;
+    height: 140%;
+  }
+
+}
+
+.page-header h1{
+  text-align: center;
+}
