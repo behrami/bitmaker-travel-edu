@@ -11,12 +11,18 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      redirect_to root_path
+      if request.xhr?
+        render json: {logged_in: render_to_string('layouts/_header', layout: false)} 
+      else
+        redirect_to root_path
+      end
+
     else
       flash.now[:alert] = 'Unsuccessful Sign In'
-
       if request.xhr?
-        render partial: 'error'
+        render json: {
+          failed: render_to_string('_error', layout: false)
+        }
       else
         render :new
       end

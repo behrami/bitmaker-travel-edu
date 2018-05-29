@@ -1,0 +1,22 @@
+<h1 class="app-title">WhereTo?</h1>
+
+<nav>
+  <% if current_user %>
+
+    <%= link_to('Home', months_path, class: 'btn btn-warning btn-lg', role: 'button') %>
+    <%= link_to( 'Sign out', session_path, method: :delete, class: 'btn btn-warning btn-lg', role: 'button') %>
+    <%= link_to( 'Favourites', favourites_path, class: 'btn btn-warning btn-lg', role: 'button') %>
+        <p>Welcome, <%= current_user.user_name %>!<p><br>
+  <% else %>
+    <%= link_to('Home', months_path, class: 'btn btn-warning btn-lg', role: 'button') %>
+    <!-- <%= link_to( 'Sign in', new_session_path, class: 'btn btn-warning btn-lg', role: 'button', id: 'SignIn')%> -->
+  <%= link_to( 'Feeling Lucky?', hotel_path(rand(1650)), class: 'btn btn-success btn-lg', role: 'button') %>
+  <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal" id='SignIn'>
+    Sign In
+  </button>
+    <%= link_to( 'Sign up', new_user_path, class: 'btn btn-warning btn-lg', role: 'button') %><br>
+  <% end %>
+
+</nav>
+
+<%= flash[:notice] %>

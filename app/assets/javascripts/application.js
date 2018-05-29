@@ -11,6 +11,6 @@
 // about supported direc'submit'tives.
 //
 //= require rails-ujs
-//= require turbolinks
 //= require_tree .
 //= require jquery
+//= require bootstrap

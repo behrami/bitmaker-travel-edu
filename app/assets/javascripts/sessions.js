@@ -21,8 +21,12 @@ document.addEventListener('DOMContentLoaded', function() {
       data: $(signInForm).serialize()
     }).done(function(data, textStatus, xhr){
       console.log(xhr.getResponseHeader('Content-Type'));
-      if(xhr.getResponseHeader('Content-Type') === 'text/html; charset=utf-8'){
-        document.querySelector('#signInModalContainer .modal-body').append(data)
+      if(data["failed"] !== undefined){
+        document.querySelector('#signInModalContainer .alert').innerHTML = data["failed"]
+      }
+      else{
+        $('#exampleModal').modal('hide');
+        document.querySelector('.header').innerHTML = data["logged_in"]
       }
 
     })
