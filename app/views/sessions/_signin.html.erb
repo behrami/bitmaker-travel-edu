@@ -1,28 +1,4 @@
-<!-- <div class ='container'>
 
-<div class = 'page-header'>
-  <h1>Sign in</h1>
-</div>
-
-<div class = 'SignInForm'>
-  <%= form_for :session, url: session_path do |f| %>
-    <p>
-    <%= f.text_field :user_name, placeholder: 'User Name' %>
-    </p>
-
-    <p>
-    <%= f.password_field :password, placeholder: 'Password' %>
-    </p>
-
-    <p>
-    <%= f.submit 'Sign In' %>
-    </p>
-  <% end %>
-</div>
-
-<%=flash.now[:alert]%>
-
-</div> -->
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -35,8 +11,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <div class = 'SignInForm'>
-          <%= form_for :session, url: session_path do |f| %>
+          <%= form_for :session, url: session_path, html: {id: 'signInForm'} do |f| %>
             <p>
             <%= f.text_field :user_name, placeholder: 'User Name' %>
             </p>
@@ -46,10 +21,12 @@
             </p>
 
             <p>
-            <%= f.submit 'Sign In' %>
+            <%= f.submit 'Sign In', id: 'signInSubmit' %>
             </p>
           <% end %>
-        </div>
+
+        <%= render partial: 'sessions/error' %>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

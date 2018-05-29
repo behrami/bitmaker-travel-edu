@@ -1,9 +1,9 @@
 class SessionsController < ApplicationController
 
   def new
-    if request.xhr?
-      render layout: false
-    end
+    # if request.xhr?
+    #   render layout: false
+    # end
   end
 
   def create
@@ -14,7 +14,13 @@ class SessionsController < ApplicationController
       redirect_to root_path
     else
       flash.now[:alert] = 'Unsuccessful Sign In'
-      render :new
+
+      if request.xhr?
+        render partial: 'error'
+      else
+        render :new
+      end
+
     end
 
   end
