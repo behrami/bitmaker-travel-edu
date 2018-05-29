@@ -20,15 +20,18 @@
       <%= link_to( 'Favourites', favourites_path, class: 'btn btn-warning btn-lg', role: 'button') %>
     <% else %>
       <%= link_to('Home', months_path, class: 'btn btn-warning btn-lg', role: 'button') %>
-      <%= link_to( 'Sign in', new_session_path, class: 'btn btn-warning btn-lg', role: 'button') %>
-      <%= link_to( 'Sign up', new_user_path, class: 'btn btn-warning btn-lg', role: 'button') %><br>
+      <!-- <%= link_to( 'Sign in', new_session_path, class: 'btn btn-warning btn-lg', role: 'button', id: 'SignIn')%> -->
+      <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal" id='SignIn'>
+        Sign In
+      </button>
+      <%= link_to( 'Sign up', new_user_path, class: 'btn btn-warning btn-lg', role: 'button', id: 'SignUp') %><br>
     <% end %>
 
     <%= flash[:notice] %>
 
     <%= yield %>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
   </body>

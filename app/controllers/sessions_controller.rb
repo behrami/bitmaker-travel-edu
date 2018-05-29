@@ -1,5 +1,9 @@
 class SessionsController < ApplicationController
+
   def new
+    if request.xhr?
+      render layout: false
+    end
   end
 
   def create
@@ -12,7 +16,7 @@ class SessionsController < ApplicationController
       flash.now[:alert] = 'Unsuccessful Sign In'
       render :new
     end
-    
+
   end
 
   def destroy
