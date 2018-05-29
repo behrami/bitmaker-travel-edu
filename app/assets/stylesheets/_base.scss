@@ -1,8 +1,14 @@
 html{
   box-sizing: border-box;
 
+
+
   body{
     position: relative;
+    color: white;
+    // background-color: blue;
+    background-image: url('https://i.pinimg.com/originals/4d/ef/0e/4def0e4a479522512cc5ff9edb179a14.jpg');
+
 
     ul{
       padding-top: 20px;
@@ -30,12 +36,13 @@ html{
         position: fixed;
         width: 100%;
         top: 0;
-        padding: 5px;
+        padding: 10px;
 
         p{
           font-size: 25px;
           display: inline-block;
-          padding-left: 40px;
+          padding-right: 20px;
+          float: right;
         }
       }
     }
