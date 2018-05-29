@@ -9,3 +9,24 @@
 .signInDisplay{
   display: block;
 }
+
+
+.month-index{
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: auto;
+  grid-gap: 1em;
+
+
+  .button{
+    width: 100%;
+    display: grid;
+    padding: 40px;
+    height: 140%;
+  }
+
+}
+
+.page-header h1{
+  text-align: center;
+}
