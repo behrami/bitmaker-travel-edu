@@ -6,41 +6,24 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all'%>
+    <%= javascript_include_tag 'application'%>
   </head>
 
   <body>
-    
-    <header>
-    <h1 class="app-title">WhereTo?</h1>
 
-    <nav>
-      <% if current_user %>
+    <header class='header'>
+    <%= render partial: 'layouts/header'%>
 
-        <%= link_to('Home', months_path, class: 'btn btn-warning btn-lg', role: 'button') %>
-        <%= link_to( 'Sign out', session_path, method: :delete, class: 'btn btn-warning btn-lg', role: 'button') %>
-        <%= link_to( 'Favourites', favourites_path, class: 'btn btn-warning btn-lg', role: 'button') %>
-            <p>Welcome, <%= current_user.user_name %>!<p><br>
-      <% else %>
-        <%= link_to('Home', months_path, class: 'btn btn-warning btn-lg', role: 'button') %>
-        <!-- <%= link_to( 'Sign in', new_session_path, class: 'btn btn-warning btn-lg', role: 'button', id: 'SignIn')%> -->
-      <%= link_to( 'Feeling Lucky?', hotel_path(rand(1650)), class: 'btn btn-success btn-lg', role: 'button') %>
-      <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal" id='SignIn'>
-        Sign In
-      </button>
-        <%= link_to( 'Sign up', new_user_path, class: 'btn btn-warning btn-lg', role: 'button') %><br>
-      <% end %>
-
-    </nav>
-
-    <%= flash[:notice] %>
     </header>
 
+    <div class = 'signInNotDisplay' id = 'signInModalContainer'>
+      <%=render partial: '/sessions/signin'%>
+    </div>
 
     <%= yield %>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script> -->
+
   </body>
 </html>
