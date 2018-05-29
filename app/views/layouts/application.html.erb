@@ -20,7 +20,7 @@
         <%= link_to('Home', months_path, class: 'btn btn-warning btn-lg', role: 'button') %>
         <%= link_to( 'Sign out', session_path, method: :delete, class: 'btn btn-warning btn-lg', role: 'button') %>
         <%= link_to( 'Favourites', favourites_path, class: 'btn btn-warning btn-lg', role: 'button') %>
-            <p>Welcome <%= current_user.user_name %><p><br>
+            <p>Welcome, <%= current_user.user_name %>!<p><br>
       <% else %>
         <%= link_to('Home', months_path, class: 'btn btn-warning btn-lg', role: 'button') %>
         <%= link_to( 'Sign in', new_session_path, class: 'btn btn-warning btn-lg', role: 'button') %>
