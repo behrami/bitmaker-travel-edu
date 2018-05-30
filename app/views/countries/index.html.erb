@@ -1,15 +1,15 @@
 <div class ='container'>
 
-<div class = 'page-header'>
-<h2>Select a Country</h2>
-</div>
+  <div class = 'page-header'>
+    <h2>Select a Country</h2>
+  </div>
 
-<ul>
-<% @countries.each do |country| %>
-  <p>
-  <li><%= link_to(country.name, country_cities_path(country), class: 'btn btn-info btn-lg', role: 'button') %></li>
-  </p>
-<% end %>
-</ul>
+  <ul>
+    <% @countries.each do |country| %>
+      <p>
+      <li><%= link_to(country.name, country_cities_path(country), class: 'btn btn-info btn-lg', role: 'button') %></li>
+      </p>
+    <% end %>
+  </ul>
 
 </div>

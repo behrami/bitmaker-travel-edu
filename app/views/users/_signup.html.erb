@@ -1,0 +1,31 @@
+<%= form_for :user, url: user_path, html: {id: 'signUpForm'} do |f| %>
+  <p>
+    <%= f.text_field :user_name, placeholder: 'User Name' %>
+  </p>
+
+  <p>
+    <%= f.text_field :first_name, placeholder: 'First Name'%>
+  </p>
+
+  <p>
+    <%= f.text_field :last_name, placeholder: 'Last Name' %>
+  </p>
+
+  <p>
+    <%= f.email_field :email, placeholder: 'Email' %>
+  </p>
+
+  <p>
+    <%= f.password_field :password, placeholder: 'Password' %>
+  </p>
+
+  <p>
+    <%= f.password_field :password_confirmation, placeholder: 'Confirm Password' %>
+  </p>
+
+  <p>
+    <%= f.submit 'Sign Up', id: 'signUpSubmit' %>
+  </p>
+<% end %>
+
+<div class= 'alert'><%= render partial: 'users/errorSignup' %></div>

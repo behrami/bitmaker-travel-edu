@@ -13,13 +13,21 @@ class UsersController < ApplicationController
     @user.user_name = params[:user][:user_name]
 
     if @user.save
-      redirect_to root_path
+      if request.xhr?
+        render json: {sign_up: render_to_string('layouts/_header', layout: false)}
+      else
+        redirect_to root_path
+      end
+
     else
       flash.now[:alert] = 'Unsuccessful Sign Up'
-      render :new
+      if request.xhr?
+        render json: {failed: render_to_string('_errorSignup', layout: false)}
+      else
+        render :new
+      end
+
     end
   end
 
-  def show
-  end
 end

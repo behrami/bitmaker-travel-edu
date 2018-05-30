@@ -1,9 +1,6 @@
 class SessionsController < ApplicationController
 
   def new
-    # if request.xhr?
-    #   render layout: false
-    # end
   end
 
   def create
@@ -12,7 +9,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
       if request.xhr?
-        render json: {logged_in: render_to_string('layouts/_header', layout: false)} 
+        render json: {sign_in: 'Passed Sign In'}
       else
         redirect_to root_path
       end
@@ -20,9 +17,7 @@ class SessionsController < ApplicationController
     else
       flash.now[:alert] = 'Unsuccessful Sign In'
       if request.xhr?
-        render json: {
-          failed: render_to_string('_error', layout: false)
-        }
+        render json: {failed: 'Unsuccessful Sign In'}
       else
         render :new
       end
