@@ -4,8 +4,8 @@
 
 .month-index{
   display: grid;
-  grid-template-columns: 33% 33% 33%;
-  grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(150px, 1fr));
   grid-gap: 1em;
 
 
