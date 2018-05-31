@@ -1,0 +1,7 @@
+<%= form_tag city_hotel_path(@city_id, @hotel.id), method: 'GET' do %>
+  <fieldset class="form-group">
+    <%= label_tag :search %>
+    <%= text_field_tag :search, "", class: 'form-control' %>
+  </fieldset>
+  <%= submit_tag 'Lets go!', class: 'btn btn-primary' %>
+<% end %>

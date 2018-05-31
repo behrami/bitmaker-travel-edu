@@ -17,6 +17,7 @@ task get_google_data: :environment do
         hotelList_response = HTTParty.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=#{@city_name}+#{@country_name}+hotel&key=#{@key}")
 
         hotelList_body = JSON.parse(hotelList_response.body)
+        puts hotelList_body
         @hotelListArray = hotelList_body['results']
 
         @hotelListArray.each do |hotel|

@@ -11,6 +11,10 @@ function initMap() {
     zoom: 15
   });
 
+
+
+
+
   var infowindow = new google.maps.InfoWindow();
   var service = new google.maps.places.PlacesService(map);
   var hotelId = myMap.getAttribute('data-place-id');

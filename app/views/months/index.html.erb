@@ -1,8 +1,28 @@
 <div class ='container'>
 
 <div class = 'page-header'>
-<h2>Select a Month</h2>
+<h2>Where do you want to go?</h2>
 </div>
+
+<%= render 'months_form' %>
+
+<%if @results%>
+  <%@results.each do |key,value|%>
+    <%=key%><br/>
+    <% value.each do |result|%>
+      <%if key == "City"%>
+        <%= link_to result.name, city_hotels_path(result.id)%><br/>
+      <%end%>
+      <%if key == "Country"%>
+        <%= link_to result.name, country_cities_path(result.id)%><br/>
+      <% end %>
+      <%if key == "Hotel"%>
+        <%= link_to result.name, hotel_path(result.id)%><br/>
+      <%end%>
+    <%end%>
+  <%end%>
+
+<%end%>
 
 <div class ='month-index'>
 

@@ -4,9 +4,14 @@
 <h2>Hotels</h2>
 </div>
 
-
+<%= render partial: 'hotels_form' %>
 <ul>
 <% @hotels.each do |hotel| %>
+<header><h1 class="display-4"><%= hotel.name %></h1></header>
+
+<p>Address: <%= hotel.formatted_address %></p>
+<p>Coordinates: <%= hotel.latitude %> <%= hotel.longitude %></p>
+
   <p><li>
     Picutre: code
     Name: <%= hotel['name'] %><br>

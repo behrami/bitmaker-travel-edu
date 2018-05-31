@@ -20,11 +20,13 @@
         <%= link_to('Home', months_path, class: 'btn btn-warning btn-lg', role: 'button') %>
         <%= link_to( 'Sign out', session_path, method: :delete, class: 'btn btn-warning btn-lg', role: 'button') %>
         <%= link_to( 'Favourites', favourites_path, class: 'btn btn-warning btn-lg', role: 'button') %>
+        <%= link_to 'Feeling lucky?', hotel_path(rand(50)), class: 'btn btn-primary btn-lg' %>
             <p>Welcome, <%= current_user.user_name %>!<p><br>
       <% else %>
         <%= link_to('Home', months_path, class: 'btn btn-warning btn-lg', role: 'button') %>
         <%= link_to( 'Sign in', new_session_path, class: 'btn btn-warning btn-lg', role: 'button') %>
-        <%= link_to( 'Sign up', new_user_path, class: 'btn btn-warning btn-lg', role: 'button') %><br>
+        <%= link_to( 'Sign up', new_user_path, class: 'btn btn-warning btn-lg', role: 'button') %>
+        <%= link_to 'Feeling lucky?', hotel_path(rand(50)), class: 'btn btn-primary btn-lg' %><br>
       <% end %>
 
     </nav>

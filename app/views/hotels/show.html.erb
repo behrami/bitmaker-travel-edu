@@ -4,6 +4,8 @@
 <h2><%= @hotel['name'] %></h2>
 </div>
 
+
+
 Address: <%= @hotel['formatted_address'] %><br>
 Rating: <%= @hotel['rating'] %><br>
 Phone Number: <%= @phone_number %><br>
@@ -12,6 +14,14 @@ Website: <%= link_to(@website, @website)%><br>
 <p>
 <div id="map" data-place-id='<%=@place_id%>' data-lat="<%= @latitude%>" data-lng="<%= @longitude%>"></div>
 </p>
+
+Places to Visit:<br/>
+
+<% if @search_info %>
+  <% @search_info.each do |info| %>
+    <%= info['name'] %><br/>
+  <% end %>
+<% end %>
 
 Photos: Code<br>
 
@@ -35,6 +45,7 @@ Reviews: <br>
 <% end %>
 
 </div>
+
 
 
 
