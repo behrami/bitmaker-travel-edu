@@ -6,7 +6,7 @@ task get_google_data: :environment do
   @countries = Country.all
   @cities = City.all
 
-  @countries.each do |country|
+  @countries.first(1).each do |country|
     @cities.each do |city|
 
       if country.id == city.country_id
