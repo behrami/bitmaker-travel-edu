@@ -7,7 +7,7 @@
   <ul>
     <% @countries.each do |country| %>
       <p>
-      <li><%= link_to(country.name, country_cities_path(country), class: 'btn btn-info btn-lg', role: 'button') %></li>
+        <li><%= link_to(country.name, country_cities_path(country), class: 'btn btn-info btn-lg', role: 'button') %></li>
       </p>
     <% end %>
   </ul>

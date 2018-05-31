@@ -1,13 +1,9 @@
 html{
   box-sizing: border-box;
 
-
-
   body{
-    position: relative;
-    color: white;
-    // background-color: blue;
-    background-image: url('https://i.pinimg.com/originals/4d/ef/0e/4def0e4a479522512cc5ff9edb179a14.jpg');
+    // background-image: url('https://i.pinimg.com/originals/4d/ef/0e/4def0e4a479522512cc5ff9edb179a14.jpg');
+    background-image: url('http://www.consultorio20.com.br/wp-content/uploads/2016/02/Geometric-Background.jpg.pagespeed.ce._pT6EVah5D.jpg');
 
 
     ul{
@@ -30,8 +26,6 @@ html{
         font-family: Helvetica, sans-serif;
       }
 
-
-
       nav {
         position: fixed;
         width: 100%;
@@ -40,7 +34,7 @@ html{
 
         p{
           font-size: 25px;
-          display: inline-block;
+          // display: inline-block;
           padding-right: 20px;
           float: right;
         }
