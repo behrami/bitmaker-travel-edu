@@ -1,15 +1,29 @@
-<h2>Favourites</h2>
+<div class ='container'>
 
+  <div class = 'page-header'>
+    <h2>Favourites</h2>
+  </div>
 
-<% @favourites.each do |favourite|%>
-  <% if current_user.id == favourite.user_id %>
-  <ul>
-    <li><%= link_to(favourite.hotel.name, hotel_path(favourite.hotel.id)) %></li>
-    <li><%= favourite.hotel.formatted_address %></li>
-    <li><%= favourite.hotel.rating %></li>
+  <ul class='indexFavourite'>
+  <% @favourites.each do |favourite|%>
+    <% if current_user.id == favourite.user_id %>
+      <li>
+        <div class=favouriteLeft>
+          <%=image_tag("https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{favourite.hotel.photo_reference}&sensor=false&key=#{@key}") %><br>
+        </div>
 
-  </ul>
-    <div class="delete-button"><%= link_to('Delete', favourite_path(favourite), method: :delete, data: {confirm: "Are you sure you want to delete this hotel?"}, class: 'btn btn-danger btn-lg', role: 'button' ) %></div>
+        <div class=favouriteRight>
+          <%= link_to(favourite.hotel.name, hotel_path(favourite.hotel.id)) %><br>
+          <%= favourite.hotel.formatted_address %><br>
+          <%= favourite.hotel.rating %><br>
 
+          <div class="delete-button">
+            <%= link_to('Delete', favourite_path(favourite), method: :delete, data: {confirm: "Are you sure you want to delete this hotel?"}, class: 'btn btn-danger btn-lg', role: 'button' ) %>
+          </div>
+        </div>
+      </li>
+    <% end %>
   <% end %>
-<% end %>
+  </ul>
+
+</div>

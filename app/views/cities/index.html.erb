@@ -1,15 +1,13 @@
 <div class ='container'>
 
-<div class = 'page-header'>
-<h2>Select a City</h2>
-</div>
+  <div class = 'page-header'>
+    <h2>Select a City</h2>
+  </div>
 
-<ul>
-<% @cities.each do |city| %>
-  <p>
-  <li><%= link_to(city.name, city_hotels_path(city), class: 'btn btn-info btn-lg', role: 'button') %></li>
-  </p>
-<% end %>
-</ul>
+  <ul class='cityList'>
+    <% @cities.each do |city| %>
+        <li><%= link_to(city.name, city_hotels_path(city), class: 'btn btn-info btn-lg', role: 'button') %></li>
+    <% end %>
+  </ul>
 
 </div>

@@ -1,21 +1,23 @@
 <div class ='container'>
 
-<div class = 'page-header'>
-<h2>Hotels</h2>
-</div>
+  <div class = 'page-header'>
+    <h2>Hotels</h2>
+  </div>
 
-
-<ul>
-<% @hotels.each do |hotel| %>
-  <p><li>
-    Picutre: code
-    Name: <%= hotel['name'] %><br>
-    Address: <%= hotel['formatted_address'] %><br>
-    Rating: <%= hotel['rating'] %><br>
-    <%= link_to('View Hotel', city_hotel_path(@city_id,hotel), class: 'btn btn-success btn-lg', role: 'button') %>
-  </li></p>
-<% end %>
-</ul>
-
+  <ul class='indexHotel'>
+  <% @hotels.each do |hotel| %>
+    <li>
+      <div class=hotelIndexLeft>
+        <%=image_tag("https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{hotel['photo_reference']}&sensor=false&key=#{@key}") %>
+      </div>
+      <div class=hotelIndexRight>
+        Name: <%= hotel['name'] %><br>
+        Address: <%= hotel['formatted_address'] %><br>
+        Rating: <%= hotel['rating'] %><br>
+        <%= link_to('View Hotel', city_hotel_path(@city_id,hotel), class: 'btn btn-success btn-lg', role: 'button') %><br>
+    </div>
+    </li>
+  <% end %>
+  </ul>
 
 </div>

@@ -13,13 +13,67 @@
  *= require_tree .
  *= require_self
  */
-
- #map {
-   width: 100%;
- }
  /* Optional: Makes the sample page fill the window. */
  html, body {
    height: 100%;
    margin: 0;
    padding: 0;
+
+   background-image: url('http://www.consultorio20.com.br/wp-content/uploads/2016/02/Geometric-Background.jpg.pagespeed.ce._pT6EVah5D.jpg');
  }
+
+ .app-title{
+   color: white;
+   font-family: 'Fredoka One';
+   font-size: 50px;
+   font-weight: 100;
+ }
+
+ .flash{
+   color: white;
+ }
+
+.container{
+  padding-top: 150px;
+}
+
+ li{
+    list-style-type: none;
+  }
+
+  .page-header{
+    text-align: center;
+    font-weight: 100;
+  }
+
+  .right{
+    text-align: right;
+  }
+
+.header{
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  padding-top: 20px;
+  background-color: #120A8F;
+}
+
+.bottom{
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .right{
+    display: none;
+  }
+
+  .bottom{
+    position: fixed;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    z-index: 1;
+    padding-top: 20px;
+    background-color: #120A8F;
+  }
+}

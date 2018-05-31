@@ -1,41 +1,45 @@
 <div class ='container'>
 
-<div class = 'page-header'>
-<h2><%= @hotel['name'] %></h2>
+  <div class = 'page-header'>
+    <h2><%= @hotel['name'] %></h2>
+  </div>
+
+  Rating: <%= @hotel['rating'] %><br>
+  Address: <%= @hotel['formatted_address'] %><br>
+  Phone Number: <%= @phone_number %><br>
+  Website: <%= link_to(@website, @website)%><br>
+
+  <p>
+    <div id="map" data-place-id='<%=@place_id%>' data-lat="<%= @latitude%>" data-lng="<%= @longitude%>"></div>
+  </p>
+
+  <ul class='showHotelPhotos'>
+  <% @photosArray.each do |photo| %>
+    <li>
+      <%= image_tag("https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{photo['photo_reference']}&sensor=false&key=#{@key}") %>
+    </li>
+  <% end %>
+  </ul><br>
+
+  Reviews: <br>
+
+  <ul class='showHotelReviews'>
+  <% @reviewsArray.each do |review| %>
+    <li>
+      <%= image_tag(review['profile_photo_url']) %>
+      <%= review['author_name']%><br>
+      Rating: <%= review['rating']%><br>
+      <%= review['text'] %>
+    </li>
+  <% end %>
+  </ul>
+
+  <%= link_to('Book Now', @book_link, class: 'btn btn-success btn-lg', role: 'button' ) %>
+
+  <% if current_user %>
+  <%= link_to("Add to favourites", hotel_favourites_path(@hotel_id), method: :post, class: 'btn btn-success btn-lg', role: 'button') %><br>
+  <% end %>
+
 </div>
-
-Address: <%= @hotel['formatted_address'] %><br>
-Rating: <%= @hotel['rating'] %><br>
-Phone Number: <%= @phone_number %><br>
-Website: <%= link_to(@website, @website)%><br>
-
-<p>
-<div id="map" data-place-id='<%=@place_id%>' data-lat="<%= @latitude%>" data-lng="<%= @longitude%>"></div>
-</p>
-
-Photos: Code<br>
-
-Reviews: <br>
-
-<ul>
-<% @reviewsArray.each do |review| %>
-  <p><li>
-    <%= image_tag(review['profile_photo_url']) %>
-    <%= review['author_name']%><br>
-    <%= review['rating']%><br>
-    <%= review['text'] %>
-  </li></p>
-<% end %>
-</ul>
-
-<%= link_to('Book Now', @book_link, class: 'btn btn-success btn-lg', role: 'button' ) %>
-
-<% if current_user %>
-<%= link_to("Add to favourites", hotel_favourites_path(@hotel_id), method: :post, class: 'btn btn-success btn-lg', role: 'button') %><br>
-<% end %>
-
-</div>
-
-
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=@key%>&libraries=places&callback=initMap"></script>

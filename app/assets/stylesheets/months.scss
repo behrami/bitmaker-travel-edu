@@ -2,22 +2,50 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.month-index{
+.header{
+  display: grid;
+  grid-template-columns: 25% 1fr 25%;
+  padding: 1% 1% 1% 1%;
+
+  .app-title{
+    text-align: center;
+  }
+}
+
+.monthList{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   grid-template-rows: repeat(auto-fill, minmax(150px, 1fr));
   grid-gap: 1em;
 
+  a{
+      max-width: 1fr;
 
-  .button{
-    width: 100%;
-    display: grid;
-    padding: 40px;
-    height: 140%;
+      img{
+        max-width: 100%;
+      }
   }
-
 }
 
-.page-header h1{
-  text-align: center;
+.dropdown{
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .left{
+    .dropdown{
+      display: block;
+      img{
+        height: 40px;
+        width: 40px;
+      }
+      .dropdown-menu{
+        background-color: #120A8F;
+      }
+    }
+    .notDropDown{
+      display: none;
+    }
+  }  
+
 }

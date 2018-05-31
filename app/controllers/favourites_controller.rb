@@ -1,6 +1,7 @@
 class FavouritesController < ApplicationController
   def index
     @favourites= Favourite.all
+    @key = ENV['GOOGLE_KEY']
   end
 
   def new
