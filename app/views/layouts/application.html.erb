@@ -5,9 +5,10 @@
     <%= csrf_meta_tags %>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all'%>
     <%= javascript_include_tag 'application'%>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fredoka+One">
   </head>
 
   <body>
@@ -29,8 +30,8 @@
             </button>
           </div>
           <div class="modal-body">
-            <div class="alert"></div>
-               <%=render partial: '/sessions/signin'%>
+              <%=render partial: '/sessions/signin'%>
+              <div class="alert"></div>
           </div>
         </div>
       </div>
@@ -47,8 +48,8 @@
             </button>
           </div>
           <div class="modal-body">
+            <%=render partial: '/users/signup'%>
             <div class="alert"></div>
-               <%=render partial: '/users/signup'%>
           </div>
         </div>
       </div>

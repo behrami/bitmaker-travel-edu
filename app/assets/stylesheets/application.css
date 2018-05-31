@@ -24,6 +24,9 @@
 
  .app-title{
    color: white;
+   font-family: 'Fredoka One';
+   font-size: 50px;
+   font-weight: 100;
  }
 
  .flash{
@@ -40,6 +43,7 @@
 
   .page-header{
     text-align: center;
+    font-weight: 100;
   }
 
   .right{
