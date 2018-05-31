@@ -2,15 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-ul{
-  p{
-    li{
-      justify-content: center;
-      a{
-        justify-content: center;
+.countryList{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto-fill, minmax(1fr, 1fr));
+  grid-gap: 1em;
+
+  li{
+    a{
         width: 100%;
-        padding: 10px;
-      }
+        height: 100%;
     }
   }
+
 }

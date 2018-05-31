@@ -4,11 +4,9 @@
     <h2>Select a City</h2>
   </div>
 
-  <ul>
+  <ul class='cityList'>
     <% @cities.each do |city| %>
-      <p>
         <li><%= link_to(city.name, city_hotels_path(city), class: 'btn btn-info btn-lg', role: 'button') %></li>
-      </p>
     <% end %>
   </ul>
 

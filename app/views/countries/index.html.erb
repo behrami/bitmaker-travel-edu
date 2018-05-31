@@ -4,11 +4,11 @@
     <h2>Select a Country</h2>
   </div>
 
-  <ul>
+  <ul class='countryList'>
     <% @countries.each do |country| %>
-      <p>
-        <li><%= link_to(country.name, country_cities_path(country), class: 'btn btn-info btn-lg', role: 'button') %></li>
-      </p>
+        <li>
+          <%= link_to(country.name, country_cities_path(country), class: 'btn btn-info btn-lg', role: 'button') %>
+        </li>
     <% end %>
   </ul>
 
