@@ -22,12 +22,28 @@
    background-image: url('http://www.consultorio20.com.br/wp-content/uploads/2016/02/Geometric-Background.jpg.pagespeed.ce._pT6EVah5D.jpg');
  }
 
+ .app-title{
+   color: white;
+ }
+
+ .flash{
+   color: white;
+ }
+
 .container{
-  padding-top: 8%;
+  padding-top: 150px;
 }
 
  li{
     list-style-type: none;
+  }
+
+  .page-header{
+    text-align: center;
+  }
+
+  .right{
+    text-align: right;
   }
 
 .header{
