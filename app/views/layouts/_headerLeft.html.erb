@@ -1,5 +1,5 @@
   <%= link_to('Home', months_path, class: 'btn btn-warning btn-lg', role: 'button') %>
-  <%= link_to( 'Feeling Lucky?', hotel_path(rand(Hotel.count)), class: 'btn btn-success btn-lg', role: 'button') %>
+  <%= link_to( 'Feeling Lucky?', hotel_path(rand(Hotel.all.pluck(:id).last)), class: 'btn btn-success btn-lg', role: 'button') %>
 
   <% if current_user %>
     <%= link_to( 'Favourites',favourites_path, class: 'btn btn-warning btn-lg',role: 'button') %>
