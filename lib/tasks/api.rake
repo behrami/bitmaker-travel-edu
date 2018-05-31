@@ -16,6 +16,7 @@ task get_google_data: :environment do
         @city_name = city.name
         puts "#{@country_name} #{@city_name}"
 
+        sleep 0.25
         counter += 1
         puts "================================="
         puts "I AM A COUNTER #{counter}"
