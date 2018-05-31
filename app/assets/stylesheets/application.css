@@ -57,3 +57,22 @@
   padding-top: 20px;
   background-color: #120A8F;
 }
+
+.bottom{
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .right{
+    display: none;
+  }
+
+  .bottom{
+    /* position: fixed; not working*/
+    display: block;
+    width: 100%;
+    z-index: 1;
+    padding-top: 20px;
+    background-color: #120A8F;
+  }
+}

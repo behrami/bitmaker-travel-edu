@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var url = window.location.href;
   signInSubmit.addEventListener('click', function(event){
     event.preventDefault();
-
+    console.log("Loging");
     $.ajax({
       url: signInForm.action,
       method: signInForm.method,
