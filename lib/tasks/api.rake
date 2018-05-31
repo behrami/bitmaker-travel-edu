@@ -1,20 +1,25 @@
 desc "api call to get hotels"
 
 task get_google_data: :environment do
+  counter = 0
   @key = ENV['GOOGLE_KEY']
   Hotel.destroy_all
   @countries = Country.all
-  # @cities = City.all
+  #@cities = City.all
 
   @countries.each do |country|
     @cities = country.cities
     @cities.each do |city|
 
-      # if country.id == city.country_id
+      #if country.id == city.country_id
         @country_name = country.name
         @city_name = city.name
         puts "#{@country_name} #{@city_name}"
 
+        counter += 1
+        puts "================================="
+        puts "I AM A COUNTER #{counter}"
+        puts "================================="
         hotelList_response = HTTParty.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=#{@city_name}+#{@country_name}+hotel&key=#{@key}")
 
         hotelList_body = JSON.parse(hotelList_response.body)
@@ -48,10 +53,10 @@ task get_google_data: :environment do
           end
         end
 
-      # end
+      #end
 
     end
   end
 
-
+  puts "FINAL COUNT: #{counter}"
 end
