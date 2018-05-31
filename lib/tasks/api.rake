@@ -4,12 +4,13 @@ task get_google_data: :environment do
   @key = ENV['GOOGLE_KEY']
   Hotel.destroy_all
   @countries = Country.all
-  @cities = City.all
+  # @cities = City.all
 
   @countries.each do |country|
+    @cities = country.cities
     @cities.each do |city|
 
-      if country.id == city.country_id
+      # if country.id == city.country_id
         @country_name = country.name
         @city_name = city.name
         puts "#{@country_name} #{@city_name}"
@@ -47,7 +48,7 @@ task get_google_data: :environment do
           end
         end
 
-      end
+      # end
 
     end
   end
