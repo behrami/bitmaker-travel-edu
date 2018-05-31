@@ -1,12 +1,7 @@
 <div class='left'>
 
   <div class = 'notDropDown'>
-    <%= link_to('Home', months_path, class: 'btn btn-warning btn-lg', role: 'button') %>
-    <%= link_to( 'Feeling Lucky?', hotel_path(rand(1650)), class: 'btn btn-success btn-lg', role: 'button') %>
-
-    <% if current_user %>
-      <%= link_to( 'Favourites',favourites_path, class: 'btn btn-warning btn-lg',role: 'button') %>
-    <% end %>
+    <%= render partial: 'layouts/headerLeft'%>
   </div>
 
   <div class="dropdown">
@@ -14,13 +9,7 @@
       <%= image_tag('https://cdn4.iconfinder.com/data/icons/tupix-1/30/list-512.png');%>
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <%= link_to('Home', months_path, class: 'btn btn-warning btn-lg', role: 'button') %>
-      <%= link_to( 'Feeling Lucky?', hotel_path(rand(1650)), class: 'btn btn-success btn-lg', role: 'button') %>
-
-      <% if current_user %>
-        <%= link_to( 'Favourites',favourites_path, class: 'btn btn-warning btn-lg',role: 'button') %>
-      <% end %>
-
+      <%= render partial: 'layouts/headerLeft'%>
     </div>
   </div>
 
@@ -29,13 +18,5 @@
 <h1 class="app-title">Where_To?</h1>
 
 <div class='right'>
-  <% if current_user %>
-    <%= link_to( 'Sign out', session_path, method: :delete, class: 'btn btn-danger btn-lg', role: 'button') %>
-    <div class='flash'>Welcome, <%= current_user.user_name %>!</div>
-  <% else %>
-    <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#signin" id='signInSmall'>Sign In</button>
-    <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#signup" id='signUpSmall'>Sign Up</button>
-  <% end %>
-
-  <div class='flash'><%= flash[:notice] %></div>
+  <%=render partial: 'layouts/headerRight'%>
 </div>

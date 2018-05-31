@@ -68,7 +68,8 @@
   }
 
   .bottom{
-    /* position: fixed; not working*/
+    position: fixed;
+    bottom: 0;
     display: block;
     width: 100%;
     z-index: 1;
