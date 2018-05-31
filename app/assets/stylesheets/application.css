@@ -19,3 +19,11 @@
    margin: 0;
    padding: 0;
  }
+
+.header{
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  padding-top: 20px;
+  background-color: #120A8F;
+}

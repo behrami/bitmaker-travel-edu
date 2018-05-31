@@ -1,10 +1,14 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
 
 Month.delete_all
 Country.delete_all
 City.delete_all
+
+users = User.create([
+                    {first_name: 'admin', last_name: 'admin', user_name:'admin', email: 'admin@admin.com', password: 'admin'},
+                    {first_name: 'admin2', last_name: 'admin2', user_name:'admin2', email: 'admin2@admin.com', password: 'admin2'}
+                    ])
 
 months = ['January','February','March','April','May','June','July','August','September','October','November','December']
 

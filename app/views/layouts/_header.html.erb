@@ -1,19 +1,22 @@
+<div class='left'>
+  <%= link_to('Home', months_path, class: 'btn btn-warning btn-lg', role: 'button') %>
+  <%= link_to( 'Feeling Lucky?', hotel_path(rand(1650)), class: 'btn btn-success btn-lg', role: 'button') %>
+
+  <% if current_user %>
+    <%= link_to( 'Favourites',favourites_path, class: 'btn btn-warning btn-lg',role: 'button') %>
+  <% end %>
+</div>
+
 <h1 class="app-title">WhereTo?</h1>
 
-<nav>
+<div class='right'>
   <% if current_user %>
-    <%= link_to('Home', months_path, class: 'btn btn-warning btn-lg', role: 'button') %>
     <%= link_to( 'Sign out', session_path, method: :delete, class: 'btn btn-warning btn-lg', role: 'button') %>
-    <%= link_to( 'Favourites', favourites_path, class: 'btn btn-warning btn-lg', role: 'button') %>
     <p>Welcome, <%= current_user.user_name %>!<p><br>
   <% else %>
-    <%= link_to('Home', months_path, class: 'btn btn-warning btn-lg', role: 'button') %>
-    <%= link_to( 'Feeling Lucky?', hotel_path(rand(1650)), class: 'btn btn-success btn-lg', role: 'button') %>
-    <!-- <%= link_to( 'Sign in', new_session_path, class: 'btn btn-warning btn-lg', role: 'button', id: 'SignIn')%> -->
     <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#signin">Sign In</button>
-    <!-- <%= link_to( 'Sign up', new_user_path, class: 'btn btn-warning btn-lg', role: 'button') %><br> -->
-    <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#signup">SignUp</button>
+    <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#signup">Sign Up</button>
   <% end %>
-</nav>
 
-<%= flash[:notice] %>
+  <br><%= flash[:notice] %>
+</div>
