@@ -1,14 +1,14 @@
-<%= form_for :session, url: session_path, html: {id: 'signInForm'} do |f| %>
+<%= form_for :session, url: session_path, html: {id: 'signInForm', role: "form"} do |f| %>
   <p>
-    <%= f.text_field :user_name, placeholder: 'User Name' %>
+    <%= f.text_field :user_name, class: "form-control", placeholder: 'User Name' %>
   </p>
 
   <p>
-    <%= f.password_field :password, placeholder: 'Password' %>
+    <%= f.password_field :password, class: "form-control", placeholder: 'Password' %>
   </p>
 
   <p>
-    <%= f.submit 'Sign In', id: 'signInSubmit' %>
+    <%= f.submit 'Sign In', id: 'signInSubmit', class: "btn btn-primary btn-block" %>
   </p>
 <% end %>
 

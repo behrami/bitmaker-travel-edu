@@ -36,7 +36,11 @@
 
 .container{
   padding-top: 150px;
-  padding-bottom: 150px;
+  padding-bottom: 100px;
+}
+
+ul{
+  padding-left: 0;
 }
 
  li{
