@@ -21,16 +21,20 @@
   <% end %>
   </ul><br>
 
-  Reviews: <br>
+  <h3>Reviews:</h3> <br>
 
   <ul class='showHotelReviews'>
   <% @reviewsArray.each do |review| %>
-    <li>
-      <%= image_tag(review['profile_photo_url']) %>
-      <%= review['author_name']%><br>
-      Rating: <%= review['rating']%><br>
-      <%= review['text'] %>
+  <p>
+    <li class="media">
+      <%= image_tag(review['profile_photo_url'], class: 'mr-3') %>
+      <div class="media-body">
+        <h5 class="mt-0"><%= review['author_name']%></h5><br>
+        Rating: <%= review['rating']%><br>
+        <%= review['text'] %><br>
+      </div>
     </li>
+  </p><br>
   <% end %>
   </ul>
 
