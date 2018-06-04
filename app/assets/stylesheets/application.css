@@ -70,7 +70,12 @@ li{
   display: none;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
+  .app-title{
+    padding-left: 10%;
+    font-size: 35px;
+  }
+
   .right{
     display: none;
   }
