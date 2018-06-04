@@ -20,6 +20,8 @@
    padding: 0;
 
    background-image: url('background.jpg');
+   background-repeat: no-repeat;
+   background-attachment: fixed;
 
  }
 
@@ -80,6 +82,7 @@ li{
     width: 100%;
     z-index: 1;
     padding-top: 20px;
+    padding-bottom: 20px;
     background-color: #120A8F;
   }
 }

@@ -8,7 +8,7 @@
   <ul class='monthList'>
     <% @months.each do |month| %>
         <li>
-            <%= link_to(image_tag("#{month.name}.png"), month_countries_path(month), class: 'btn btn-info btn-lg', role: 'button')%>
+            <%= link_to(image_tag("#{month.name}.png"), month_countries_path(month))%>
         </li>
     <% end %>
   </ul>
