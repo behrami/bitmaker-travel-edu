@@ -83,6 +83,8 @@ li{
     z-index: 1;
     padding-top: 20px;
     padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
     background-color: #120A8F;
   }
 }

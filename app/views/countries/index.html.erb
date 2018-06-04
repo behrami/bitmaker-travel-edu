@@ -6,9 +6,20 @@
 
   <p>
   <ul class='countryList'>
-    <% @countries.each do |country| %>
+    <% @countries.zip(@countries_info).each do |country, country_info| %>
         <li>
-          <%= link_to(country.name, country_cities_path(country), class: 'btn btn-info btn-lg', role: 'button') %>
+          <%= link_to country_cities_path(country), class: 'btn btn-info btn-lg', role: 'button' do %>
+            <div class = 'name_flag'><%= image_tag(country_info[:flag])%> <span><%=country.name%></span></div>
+            <div class = 'extra_info'>
+              Capital: <%= country_info[:capital] %><br>
+              Population: <%= country_info[:population] %><br>
+              Currency: <%= country_info[:currency] %><br>
+              Languages:
+              <% country_info[:languages].each do |lng|%>
+                <%=lng%>
+              <%end%>
+            </div>
+          <% end %>
         </li>
     <% end %>
   </ul>
