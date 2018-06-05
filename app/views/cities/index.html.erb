@@ -5,9 +5,31 @@
   </div>
 
   <ul class='cityList'>
-    <% @cities.each do |city| %>
-        <li><%= link_to(city.name, city_hotels_path(city), class: 'btn btn-info btn-lg', role: 'button') %></li>
+    <% @cities.each_with_index do |city, index| %>
+      <% city_weather = @weather_list[index]%>
+        <li>
+          <%= link_to(city_hotels_path(city), class: 'btn btn-info btn-lg', role: 'button') do%>
+
+            <canvas id=<%= "icon#{index}"%> width="84" height="84" data-icon="<%=city_weather[:icon]%>" style="float:left;"></canvas>
+            <h4><%= city.name%></h4>
+            <%= city_weather[:temperature]%>˚ <%= city_weather[:summary]%>
+
+          <% end%>
+
+        </li>
     <% end %>
   </ul>
 
 </div>
+
+<script>
+  var skycons = new Skycons();
+
+  skycons.add("icon0", Skycons.<%= @weather_list[0][:icon].upcase.gsub('-', '_') %>);
+  skycons.add("icon1", Skycons.<%= @weather_list[1][:icon].upcase.gsub('-', '_') %>);
+  skycons.add("icon2", Skycons.<%= @weather_list[2][:icon].upcase.gsub('-', '_') %>);
+  skycons.play();
+
+</script>
+
+<script src="skycons.js"></script>

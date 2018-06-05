@@ -20,7 +20,7 @@ puts "Months Created!"
 
 countries_cities = {"Canada": ['Toronto','Montreal',"Vancouver"],
                     "Italy": ["Rome","Florence","Venice"],
-                    "England": ["London","Manchester","York"],
+                    "United Kingdom": ["London","Manchester","York"],
                     "Switzerland": ["Geneva","Zurich","Bern"],
                     "Austria": ["Vienna","Salzburg","Innsbruck"],
                     "Portugal": ["Lisbon","Porto","Madeira"],
@@ -57,7 +57,7 @@ end
 
 puts "County and Cities Created!"
 
-time_place = {'January'=> ['Italy','England','Switzerland','Austria','Portugal'],
+time_place = {'January'=> ['Italy','United Kingdom','Switzerland','Austria','Portugal'],
               'February'=>['Thailand','Japan','Singapore','Australia','Vietnam'],
               'March'   =>['Greece','Spain','Ireland','Sweden','France'],
               'April'   =>['Colombia','USA','Italy','Thailand','France'],
