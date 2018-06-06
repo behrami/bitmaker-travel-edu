@@ -7,11 +7,11 @@ class CitiesController < ApplicationController
     @weather_list=[]
     @cities.each do |city|
       hotel= Hotel.find_by(city_id: city.id)
-      @latitude=hotel.latitude
+      @latitude= hotel.latitude
       @longitude = hotel.longitude
       hash={}
 
-      city_response = HTTParty.get("https://api.darksky.net/forecast/#{@darksky_key}/#{@latitude},#{@latitude}?units=auto")
+      city_response = HTTParty.get("https://api.darksky.net/forecast/#{@darksky_key}/#{@latitude},#{@longitude}?units=auto")
       city_body = JSON.parse(city_response.body)
 
       hash[:icon] = city_body['currently']['icon']
