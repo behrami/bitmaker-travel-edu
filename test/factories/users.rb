@@ -6,5 +6,6 @@ FactoryBot.define do
     user_name "behram"
     email "behram@gmail.com"
     password "password"
+    password_confirmation "password"
   end
 end

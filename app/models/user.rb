@@ -10,6 +10,7 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :user_name, presence: true
   validates :password, length: {minimum: 4}
+  validates :password_confirmation, presence: true 
   # consider things that must be included--symbols, capital letters, numbers
   # validates :password, :with => /^[a-zA-Z0-9]+$/i
 
