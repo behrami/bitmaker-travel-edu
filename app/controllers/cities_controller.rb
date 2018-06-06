@@ -14,10 +14,10 @@ class CitiesController < ApplicationController
       city_response = HTTParty.get("https://api.darksky.net/forecast/#{@darksky_key}/#{@latitude},#{@latitude}?units=auto")
       city_body = JSON.parse(city_response.body)
 
-      hash[:icon] = city_body['hourly']['data'][0]['icon']
-      hash[:summary] = city_body['hourly']['data'][0]['summary']
-      hash[:temperature] = city_body['hourly']['data'][0]['temperature']
-      @weather_list.push(hash)
+      hash[:icon] = city_body['currently']['icon']
+      hash[:summary] = city_body['currently']['summary']
+      hash[:temperature] = city_body['currently']['temperature']
+      @weather_list << hash
     end
 
   end
