@@ -14,3 +14,8 @@
 //= require_tree .
 //= require jquery
 //= require bootstrap
+$('#hoverMe').hover(function () {
+    $('#tooltip').stop().fadeIn();
+}, function () {
+    $('#tooltip').stop().fadeOut();
+});

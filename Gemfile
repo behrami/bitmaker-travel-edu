@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
  gem 'jquery-rails'
 #httparty for api
 gem 'httparty'
+#bootstrap
 gem 'bootstrap', '~> 4.1.1'
 
 # Use Capistrano for deployment
